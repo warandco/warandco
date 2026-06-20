@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venom Vodka — War & Co</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo" aria-label="War & Co home">
+      <img src="WandCo.svg" alt="W&Co" width="40" height="32" />
+    </a>
+    <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="index.html" class="nav__link nav__link--active">Work</a></li>
+      <li><a href="about.html" class="nav__link">About</a></li>
+      <li><a href="contact.html" class="nav__link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="project">
+
+    <header class="project__header">
+      <div>
+        <a href="index.html" class="project__back">All work</a>
+        <span class="card__index">01</span>
+      </div>
+      <div>
+        <h1 class="project__title">Venom Vodka</h1>
+        <p class="project__desc">A premium spirits brand built for the dark side of celebration — bold identity system from concept to bottle.</p>
+      </div>
+    </header>
+
+    <div class="project__body">
+      <aside class="project__sidebar">
+        <p class="project__sidebar-label">Role</p>
+        <p class="project__sidebar-value">Brand Identity</p>
+        <p class="project__sidebar-label">Year</p>
+        <p class="project__sidebar-value">2024</p>
+        <p class="project__sidebar-label">Deliverables</p>
+        <p class="project__sidebar-value">Logo, Packaging, Brand Guide</p>
+      </aside>
+
+      <div class="project__images">
+        <!-- Replace divs with <img> tags pointing to your actual project images -->
+        <div class="project__img" style="aspect-ratio:16/9; background:#1a1a1a; border-radius:3px;"></div>
+        <div class="project__img" style="aspect-ratio:4/3; background:#2d2d2d; border-radius:3px;"></div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div class="project__img" style="aspect-ratio:1; background:#111; border-radius:3px;"></div>
+          <div class="project__img" style="aspect-ratio:1; background:#222; border-radius:3px;"></div>
+        </div>
+        <div class="project__img" style="aspect-ratio:16/9; background:#1a1a1a; border-radius:3px;"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p class="footer__copy">© 2025 War & Co</p>
+    <p class="footer__contact"><a href="mailto:contact@warandco.com">contact@warandco.com</a></p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
