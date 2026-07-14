@@ -4,11 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>War & Co — Brand Identity & Design</title>
-  <meta name="description" content="War & Co is an independent design studio specializing in brand identity, logo design, packaging, and digital design." />
+  <meta name="description" content="War & Co is an independent brand identity studio based in Las Vegas, NV." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8JQYXETXCD"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -16,64 +15,46 @@
     gtag('js', new Date());
     gtag('config', 'G-8JQYXETXCD');
   </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black: #111111; --white: #ffffff; --gray: #4a4a4a; }
+    html, body { height: 100%; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 40px 24px;
+    }
+    .card { display: flex; flex-direction: column; align-items: flex-start; gap: 40px; max-width: 480px; width: 100%; }
+    .card__logo img { height: 36px; width: auto; display: block; }
+    .card__body { display: flex; flex-direction: column; gap: 6px; }
+    .card__studio { font-size: 14px; font-weight: 400; color: var(--black); }
+    .card__location { font-size: 14px; font-weight: 300; color: var(--gray); }
+    .card__links { display: flex; flex-direction: column; gap: 10px; }
+    .card__link { font-size: 14px; font-weight: 400; color: var(--gray); text-decoration: none; transition: color 0.2s; }
+    .card__link:hover { color: var(--black); }
+    .card__copy { font-size: 12px; font-weight: 300; color: #aaa; }
+  </style>
 </head>
 <body>
-
-  <nav class="nav" id="nav">
-    <a href="index.html" class="nav__logo" aria-label="War & Co home">
-      <img src="images/WandCo.svg" alt="War & Co" width="60" height="48" />
-    </a>
-    <div class="nav__contact">
-      <a href="mailto:contact@warandco.com" class="nav__link">Contact</a>
+  <div class="card">
+    <div class="card__logo">
+      <img src="images/WandCo.svg" alt="War & Co" />
     </div>
-  </nav>
-
-  <section class="hero">
-    <div class="hero__inner">
-      <p class="hero__eyebrow">Brand Identity & Design</p>
-      <p class="hero__sub">Independent design studio specializing in brand identity, logo design, packaging, and digital design.</p>
+    <div class="card__body">
+      <p class="card__studio">Independent brand identity studio.</p>
+      <p class="card__location">Las Vegas, NV</p>
     </div>
-  </section>
-
-  <main class="portfolio" id="work">
-    <div class="portfolio__grid">
-
-      <article class="card">
-        <div class="card__label">
-          <p class="card__eyebrow">Selected Work</p>
-          <h2 class="card__title">Venom Vodka</h2>
-          <p class="card__meta">Brand Identity · Packaging · Print · Digital</p>
-          <p class="card__desc">Full identity system for a premium spirits brand based in San Diego, CA.</p>
-          <a href="https://www.venomvodka.com" class="card__link" target="_blank" rel="noopener">Visit site →</a>
-        </div>
-        <div class="card__images">
-          <div class="card__img-wrap card__img-wrap--tall">
-            <img src="images/Bottle-scaled.png" alt="Venom Vodka bottle" loading="lazy" />
-          </div>
-          <div class="card__img-row">
-            <div class="card__img-wrap">
-              <img src="images/Bottle-Cap-scaled.png" alt="Venom Vodka bottle cap" loading="lazy" />
-            </div>
-            <div class="card__img-wrap">
-              <img src="images/venom_letter.jpg" alt="Venom Vodka badge mark" loading="lazy" />
-            </div>
-          </div>
-        </div>
-      </article>
-
+    <div class="card__links">
+      <a href="mailto:contact@warandco.com" class="card__link">contact@warandco.com</a>
+      <a href="https://www.instagram.com/warandcompany" class="card__link" target="_blank" rel="noopener">@warandcompany</a>
     </div>
-
-    <p class="portfolio__more">More work available on request.</p>
-  </main>
-
-  <footer class="footer">
-    <p class="footer__copy">© 2026 War & Co — Las Vegas, NV</p>
-    <div class="footer__links">
-      <a href="mailto:contact@warandco.com" class="footer__link">contact@warandco.com</a>
-      <a href="https://www.instagram.com/warandcompany" class="footer__link" target="_blank" rel="noopener">Instagram</a>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+    <p class="card__copy">© 2026 War & Co</p>
+  </div>
 </body>
 </html>
