@@ -21,31 +21,26 @@
 
     body {
       font-family: 'DM Sans', system-ui, sans-serif;
-      background-color: #111111;
-      color: #ffffff;
+      background: #ffffff;
+      color: #111111;
       -webkit-font-smoothing: antialiased;
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
       padding: 40px 24px;
-      position: relative;
     }
 
-    /* Noise texture overlay */
+    /* Coral top border */
     body::before {
       content: '';
       position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
-      opacity: 0.04;
-      pointer-events: none;
-      z-index: 0;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: #ef6a54;
     }
 
     .card {
-      position: relative;
-      z-index: 1;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -58,11 +53,10 @@
       height: 36px;
       width: auto;
       display: block;
-      filter: brightness(0) invert(1);
     }
 
     .card__body { display: flex; flex-direction: column; gap: 6px; }
-    .card__studio { font-size: 15px; font-weight: 400; color: #ffffff; }
+    .card__studio { font-size: 15px; font-weight: 400; color: #111111; }
     .card__location { font-size: 15px; font-weight: 300; color: #888888; }
     .card__links { display: flex; flex-direction: column; gap: 12px; }
 
@@ -82,9 +76,9 @@
       width: 100%;
     }
 
-    .card__copy { font-size: 12px; font-weight: 300; color: #444444; }
+    .card__copy { font-size: 12px; font-weight: 300; color: #cccccc; }
 
-    .card__ig { color: #444444; transition: color 0.2s; display: flex; align-items: center; }
+    .card__ig { color: #cccccc; transition: color 0.2s; display: flex; align-items: center; }
     .card__ig:hover { color: #ef6a54; }
     .card__ig svg { width: 18px; height: 18px; fill: currentColor; }
   </style>
