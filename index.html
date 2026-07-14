@@ -17,12 +17,11 @@
   </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --black: #111111; --white: #ffffff; --gray: #4a4a4a; }
     html, body { height: 100%; }
     body {
       font-family: 'DM Sans', system-ui, sans-serif;
-      background: var(--white);
-      color: var(--black);
+      background: #111111;
+      color: #ffffff;
       -webkit-font-smoothing: antialiased;
       display: flex;
       align-items: center;
@@ -30,15 +29,42 @@
       min-height: 100vh;
       padding: 40px 24px;
     }
-    .card { display: flex; flex-direction: column; align-items: flex-start; gap: 40px; max-width: 480px; width: 100%; }
-    .card__logo img { height: 36px; width: auto; display: block; }
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 48px;
+      max-width: 480px;
+      width: 100%;
+    }
+    .card__logo img {
+      height: 36px;
+      width: auto;
+      display: block;
+      filter: brightness(0) invert(1);
+    }
     .card__body { display: flex; flex-direction: column; gap: 6px; }
-    .card__studio { font-size: 14px; font-weight: 400; color: var(--black); }
-    .card__location { font-size: 14px; font-weight: 300; color: var(--gray); }
-    .card__links { display: flex; flex-direction: column; gap: 10px; }
-    .card__link { font-size: 14px; font-weight: 400; color: var(--gray); text-decoration: none; transition: color 0.2s; }
-    .card__link:hover { color: var(--black); }
-    .card__copy { font-size: 12px; font-weight: 300; color: #aaa; }
+    .card__studio { font-size: 15px; font-weight: 400; color: #ffffff; }
+    .card__location { font-size: 15px; font-weight: 300; color: #888888; }
+    .card__links { display: flex; flex-direction: column; gap: 12px; }
+    .card__link {
+      font-size: 14px;
+      font-weight: 400;
+      color: #888888;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .card__link:hover { color: #ef6a54; }
+    .card__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .card__copy { font-size: 12px; font-weight: 300; color: #444444; }
+    .card__ig { color: #444444; transition: color 0.2s; display: flex; align-items: center; }
+    .card__ig:hover { color: #ef6a54; }
+    .card__ig svg { width: 18px; height: 18px; fill: currentColor; }
   </style>
 </head>
 <body>
@@ -52,9 +78,15 @@
     </div>
     <div class="card__links">
       <a href="mailto:contact@warandco.com" class="card__link">contact@warandco.com</a>
-      <a href="https://www.instagram.com/warandcompany" class="card__link" target="_blank" rel="noopener">@warandcompany</a>
     </div>
-    <p class="card__copy">© 2026 War & Co</p>
+    <div class="card__bottom">
+      <p class="card__copy">© 2026 War & Company</p>
+      <a href="https://www.instagram.com/warandcompany" class="card__ig" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+      </a>
+    </div>
   </div>
 </body>
 </html>
