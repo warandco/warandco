@@ -24,6 +24,7 @@
       color: #2c2c2a;
       -webkit-font-smoothing: antialiased;
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
     .grid {
@@ -80,7 +81,6 @@
 
     .nav-contact a:hover { opacity: 0.7; }
 
-    /* Fix: both columns use identical flex layout so content bottom-aligns */
     .main-left {
       grid-column: 1 / 3;
       grid-row: 2;
@@ -107,15 +107,23 @@
       letter-spacing: 0.14em;
       color: #a8a49e;
       text-transform: uppercase;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+      animation-delay: 0.2s;
     }
 
-    /* Fix: larger headline */
+    /* Headline fade up on load */
     .main-left h1 {
       font-size: clamp(40px, 5vw, 64px);
       font-weight: 600;
       line-height: 1.0;
       letter-spacing: -0.02em;
       color: #2c2c2a;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation-delay: 0.1s;
+      will-change: transform;
     }
 
     .main-right p {
@@ -124,7 +132,48 @@
       color: #5f5e5a;
       line-height: 1.75;
       max-width: 280px;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation-delay: 0.3s;
     }
+
+    .main-right .label {
+      animation-delay: 0.25s;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Nav fade in */
+    .nav-logo span,
+    .nav-contact a {
+      opacity: 0;
+      animation: fadeIn 0.5s ease forwards;
+      animation-delay: 0.05s;
+    }
+
+    .nav-contact a { animation-delay: 0.1s; }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* Footer fade in */
+    .footer-copy,
+    .footer-coords,
+    .footer-ig a {
+      opacity: 0;
+      animation: fadeIn 0.6s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    .footer-coords { animation-delay: 0.6s; }
+    .footer-ig a { animation-delay: 0.7s; }
 
     .footer-copy {
       grid-column: 1;
@@ -171,6 +220,12 @@
     .footer-ig a:hover { color: #ef6a54; }
     .footer-ig svg { width: 14px; height: 14px; fill: currentColor; }
 
+    /* Parallax container */
+    .parallax-content {
+      will-change: transform;
+      transition: transform 0.1s linear;
+    }
+
     @media (max-width: 640px) {
       .grid {
         grid-template-columns: 1fr 1fr;
@@ -203,6 +258,15 @@
       .footer-coords { display: none; }
       .footer-ig { grid-column: 2; grid-row: 4; padding: 0 20px; }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -218,7 +282,7 @@
 
     <div class="main-left br">
       <span class="label">Las Vegas, NV</span>
-      <h1>Independent<br>design studio.</h1>
+      <h1 class="parallax-content">Independent<br>design studio.</h1>
     </div>
     <div class="main-right">
       <span class="label">Work</span>
@@ -236,5 +300,24 @@
     </div>
 
   </div>
+
+  <script>
+    // Parallax on scroll
+    const headline = document.querySelector('.parallax-content');
+
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          // Move headline at 40% of scroll speed for depth effect
+          headline.style.transform = `translateY(${scrollY * -0.4}px)`;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  </script>
 </body>
 </html>
